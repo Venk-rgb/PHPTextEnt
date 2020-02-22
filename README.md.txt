@@ -1,0 +1,1 @@
+The application uses PHP and MYSQL using XAMPP.
