@@ -8,11 +8,12 @@
 		<div>
 			<?php
 				$count = 0;
+				echo '<div style="font-size:30px; text-align:center">Submit random sentences from the list of sentences</div>';
 				$file = "C:/Users/vikio/OneDrive/Desktop/Final Year Project/bestformat1.txt";
 				$document = file_get_contents($file);
 				$lines = explode("\n", $document);
 				foreach ($lines as $newline) {
-					if($count==100)
+					if($count==5000)
 					{
 						break;
 					}
@@ -28,6 +29,8 @@
 						echo '<br><br>';
 						echo '<marquee behavior="slide" direction="right" loop="1" width = "85%" scrollamount="30"';
 						echo '<p style="font-size:30px">';
+						echo $count+1;
+						echo '. ';
 						echo $newline;
 						echo '</p>';
 						echo '</marquee>';
@@ -67,7 +70,7 @@
 						for($i=0; $i<$val; $i = $i+1){
 							echo "<input type=\"checkbox\" name = 'sentence[]' checked=\"true\" style=\"display:none;\" value = \"$array_of_words[$i]\"/>";
 						}
-						echo '<div style="text-align:center"> <input type="submit" value="SUBMIT"/></div>';
+						echo '<div style="text-align:center"> <input type="submit" value="SUBMIT" name="yes"/></div>';
 						echo "</form>";
 						echo '</p>';
 						echo '<form method="get" action = "insert.php"> <div style="text-align:center"> <input type="submit" value="SUBMIT ALL"/></div></form>';
